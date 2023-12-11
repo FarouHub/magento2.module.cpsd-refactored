@@ -1,0 +1,27 @@
+{
+	"name": "lightweight/magento2.module.cpsd-refactored",
+	"description": "Best4Mage Configurable Product Simple Details",
+	"type": "magento2-module",
+	"version": "1.0.4",
+	"authors": [
+		{
+			"name": "Best4Mage",
+			"email": "info@best4mage.com",
+			"homepage": "http://www.best4mage.com/"
+		}
+	],
+	"autoload": {
+		"files": [ "registration.php" ],
+		"psr-4": {
+			"Lightweight\\CpsdRefactored\\": ""
+		}
+	},
+	"keywords": [
+		"magento2",
+		"magento 2",
+		"best4mage",
+		"cpsd",
+		"configurable",
+		"product"
+	]
+}

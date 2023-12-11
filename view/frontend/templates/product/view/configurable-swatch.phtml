@@ -1,0 +1,24 @@
+<?php /** @var $block \Best4Mage\CPSD\Block\Rewrite\Product\Configurable */ ?>
+<div class="swatch-opt" data-role="swatch-options"></div>
+
+<script type="text/x-magento-init">
+    {
+        "[data-role=swatch-options]": {
+            "Lightweight_CpsdRefactored/js/cpsd": {
+                "jsonConfig": <?= /* @escapeNotVerified */ $swatchOptions = $block->getJsonConfig() ?>,
+                "jsonSwatchConfig": <?php /* @noEscape */ echo $block->getJsonSwatchConfig(); ?>,
+                "mediaCallback": "<?= /* @escapeNotVerified */ $block->getMediaCallback() ?>",
+                "gallerySwitchStrategy": "<?php /* @escapeNotVerified */ echo $block->getVar(
+                    'gallery_switch_strategy',
+                    'Magento_ConfigurableProduct'
+                ) ?: 'replace'; ?>",
+                "cpsdConfig": <?= $block->getCpsdConfig() ?>,
+                "cpsdProducts": <?= $block->getAllProductsData() ?>
+            },
+            "Magento_Swatches/js/configurable-customer-data": {
+                    "swatchOptions": <?php /* @noEscape */ echo $swatchOptions ?>
+            }
+        }
+    }
+</script>
+

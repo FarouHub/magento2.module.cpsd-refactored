@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Indexer/etc/indexer.xsd">
+    <indexer id="cpsd_url_rewrites" view_id="cpsd_url_rewrites" class="Lightweight\CpsdRefactored\Model\Indexer\SimpleProductUrlRewrites">
+        <title translate="true">CPSD URL Rewrites</title>
+        <description translate="true">Generate SEO friendly urls for configurable child products.</description>
+    </indexer>
+</config>

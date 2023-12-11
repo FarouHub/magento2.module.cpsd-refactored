@@ -1,0 +1,90 @@
+.products-grid .show[data-role="priceBox"], 
+.products-grid .show[data-role="tierPriceBox"] {
+    display: inline-block !important;
+    position: relative;
+    width: 49%;
+}
+.products-list .show[data-role="priceBox"], 
+.products-list .show[data-role="tierPriceBox"] {
+    display: inline-block !important;
+}
+.products-grid .show[data-role="tierPriceBox"] {
+  text-align: right;
+  position: relative;
+}
+.products-list .show[data-role="tierPriceBox"] {
+  position: relative;
+  margin-left: 30px;
+}
+.show[data-role="priceBox"] .hide.price-label {
+  display: none !important;
+}
+.tier-price-label {
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: underline;
+    color: #666;
+}
+.tier-price-label:hover+.tier-price-tooltip {
+  display: block;
+}
+.tier-price-label:hover,
+.tier-price-label:focus {
+    color: #000;
+}
+.tier-price-tooltip {
+  width: 220px;
+  /*max-height: 100%;*/
+  min-height: 20px;
+  min-width: 20px;
+  position: absolute;
+  padding: 5px;
+  background: #fff;
+  color: #444;
+  border: 1px solid #adadad;
+  display: none;
+  z-index: 999;
+  text-align: center;
+  font-size: 12px;
+  bottom: 25px;
+  right: 0;
+}
+.tier-price-tooltip .corner {
+  right: 0;
+  position: absolute;
+  bottom: 0;
+  height: 8px;
+}
+.products-list .tier-price-tooltip {
+  left: 0;
+  right: auto;
+}
+.products-list .tier-price-tooltip .corner {
+  left: 20px;
+  right: auto;
+}
+.tier-price-tooltip .corner:after {
+    content: '';
+    position: relative;
+    top: 3px;
+    left: -15px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 7px 7.5px 0 7.5px;
+    border-color: #fff transparent transparent transparent;
+    font-size: 1px;
+}
+
+.tier-price-tooltip .corner:before {
+    content: '';
+    position: relative;
+    top: 4px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 8px 8.5px 0 8.5px;
+    border-color: #adadad transparent transparent transparent;
+    font-size: 1px;
+}

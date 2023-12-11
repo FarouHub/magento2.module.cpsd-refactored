@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <cpsd>
+			<general_settings>
+				<enable>0</enable>
+				<product_level>1</product_level>
+			</general_settings>
+			<labels_settings>
+				<name_selector>.page-title .base</name_selector>
+				<sku_selector>.product.attribute.sku .value</sku_selector>
+				<qty_selector>#qty</qty_selector>
+				<stock_selector>.stock span</stock_selector>
+				<short_desc_selector>.product.attribute.overview</short_desc_selector>
+				<desc_selector>#description</desc_selector>
+				<more_info_selector>#additional</more_info_selector>
+				<actions_selector>.box-tocart .actions</actions_selector>
+				<qty_wrap_selector>.field.qty</qty_wrap_selector>
+			</labels_settings>
+			<other_settings>
+				<qty_inc_pos>0</qty_inc_pos>
+				<preselect_type>0</preselect_type>
+			</other_settings>
+			<tp_settings>
+				<enable_cpsd_tp>0</enable_cpsd_tp>
+			</tp_settings>
+			<category_settings>
+				<enable_cat>0</enable_cat>
+				<tier_label>Offers</tier_label>
+				<list_name_selector>.product-item-name > a</list_name_selector>
+				<list_url_selector>.product-item-link,.product-item-photo,.product-item-description > a</list_url_selector>
+			</category_settings>
+			<support_info>
+				<version>1.0.4</version>
+			</support_info>
+		</cpsd>
+	</default>
+</config>

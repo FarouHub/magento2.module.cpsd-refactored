@@ -1,0 +1,46 @@
+<?php /** @var \Magento\Framework\Pricing\Render\Amount $block */ ?>
+<?php if ($block->getIsShowPriceRange()) : ?>
+<div class="price-box range second price-final_price-range" data-role="priceRangeBox" data-product-id="<?php /* @escapeNotVerified */ echo $block->getProductId() ?>">
+    <span class="price-range">
+        <span class="price-container price-final_price">
+            <?php if ($block->getDisplayLabelFrom()) : ?>
+                <span class="price-label"><?php /* @escapeNotVerified */ echo $block->getDisplayLabelFrom(); ?></span>
+            <?php endif; ?>
+            <span <?php if ($block->getPriceIdFrom()) :
+?> id="<?php /* @escapeNotVerified */ echo $block->getPriceIdFrom() ?>"<?php
+                  endif;?>
+                data-price-amount=""
+                data-price-type="min-final-price"
+                class="price-wrapper">
+                <span class="price"><?php /* @escapeNotVerified */ echo $block->getDisplayValueFrom();?></span>
+            </span>
+            <?php if ($block->getDisplayLabelTo()) : ?>
+                <span class="price-label"><?php /* @escapeNotVerified */ echo $block->getDisplayLabelTo(); ?></span>
+            <?php endif; ?>
+            <span <?php if ($block->getPriceIdTo()) :
+?> id="<?php /* @escapeNotVerified */ echo $block->getPriceIdTo() ?>"<?php
+                  endif;?>
+                data-price-amount=""
+                data-price-type="max-final-price"
+                class="price-wrapper">
+                <span class="price"><?php /* @escapeNotVerified */ echo $block->getDisplayValueTo();?></span>
+            </span>
+        </span>
+    </span>
+</div>
+<?php endif;?>
+<?php if ($block->getIsSwitchPrice() && $block->getIsShowPriceRange()) : ?>
+<div class="price-box price-final_price" data-role="priceBox" data-product-id="<?php /* @escapeNotVerified */ echo $block->getProductId() ?>" data-price-box="product-id-<?php /* @escapeNotVerified */ echo $block->getProductId() ?>" style="display: none;">
+    <span class="price-container price-final_price">
+        <span id="product-price-<?php /* @escapeNotVerified */ echo $block->getProductId() ?>" data-price-amount="" data-price-type="finalPrice" class="price-wrapper "><span class="price"></span></span>
+    </span>
+</div>
+<?php endif;?>
+<?php if ($block->getIsShowTierPrice()) : ?>
+<div class="tier-price-box" data-role="tierPriceBox" data-product-id="<?php /* @escapeNotVerified */ echo $block->getProductId() ?>" data-tier-price-box="product-id-<?php /* @escapeNotVerified */ echo $block->getProductId() ?>" style="display: none;">
+    <span class="tier-price-label"><?php /* @escapeNotVerified */ echo $block->getTierLabel() ?></span>
+    <div class="tier-price-tooltip" data-price-type="tierPrice">
+        <div class="content"></div><div class="corner"></div>
+    </div>
+</div>
+<?php endif; ?>

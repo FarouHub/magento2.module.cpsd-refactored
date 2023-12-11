@@ -1,0 +1,49 @@
+@font-face {
+    font-family: 'b4m';
+    src: url('../fonts/b4m.eot');
+    src: url('../fonts/b4m.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/b4m.woff') format('woff'),
+         url('../fonts/b4m.ttf') format('truetype'),
+         url('../fonts/b4m.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+#menu-best4mage-all-main-menu > a:before{
+   content: "\0042";
+  font-size: 2.5rem;
+  padding-top: 0.1rem;
+  font-family: 'b4m';
+  height: 2.5rem;
+}
+
+@font-face {
+    font-family: 'cpsd';
+    src: url('../fonts/icon.eot');
+    src: url('../fonts/icon.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/icon.woff') format('woff'),
+         url('../fonts/icon.ttf') format('truetype'),
+         url('../fonts/icon.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.admin__menu [data-ui-id="menu-best4mage-cpsd-main-menu"] > strong {
+  position: relative;
+}
+.admin__menu [data-ui-id="menu-best4mage-cpsd-main-menu"] > strong::before {
+  content: "\0047";
+  font-size: 4rem;
+  padding-top: 0.1rem;
+  font-family: 'cpsd';
+  height: 4.5rem;
+  font-weight: normal;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+.admin__menu [data-ui-id="menu-best4mage-cpsd-main-menu"] > strong span {
+  display: inline-block;
+  width: 171px;
+  position: absolute;
+  top: 20px;
+  left: 62px;
+}

@@ -1,0 +1,231 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Config/etc/system_file.xsd">
+	<system>
+		<tab id="b4mtab" translate="label" sortOrder="200">
+			<label>BEST4MAGE EXTENSIONS</label>
+		</tab>
+		<section id="cpsd" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+			<label>Best4Mage CPSD</label>
+			<tab>b4mtab</tab>
+			<resource>Lightweight_CpsdRefactored::config_cpsd</resource>
+			<group id="general_settings" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>General Settings</label>
+				<field id="enable" translate="label,comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Enable</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+					<comment>Use this option to enable it for all products.</comment>
+				</field>
+				<field id="product_level" translate="label,comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Use Product Level Settings</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+					<comment><![CDATA[Use this option to enable it only for specific products. Note : You will need to enable it in product settings.]]></comment>
+					<depends>
+						<field id="*/*/enable">1</field>
+					</depends>
+				</field>
+			</group>
+			<group id="labels_settings" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Labels Update Settings</label>
+				<field id="labels_to_update" translate="label" type="multiselect" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Labels to update</label>
+					<source_model>Lightweight\CpsdRefactored\Model\Config\Source\Updatelabels</source_model>
+				</field>
+				<field id="name_selector" translate="label,comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Product Name Selector</label>
+					<comment>Please enter "#html-id" or ".html-class". Default is '.page-title .base'</comment>
+				</field>
+				<field id="sku_selector" translate="label,comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Product SKU Selector</label>
+					<comment>Please enter "#html-id" or ".html-class". Default is '.product.attribute.sku .value'</comment>
+				</field>
+				<field id="qty_selector" translate="label,comment" type="text" sortOrder="31" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Product Qty Box Selector</label>
+					<comment>Please enter "#html-id" or ".html-class". Default is '#qty'</comment>
+				</field>
+				<field id="stock_selector" translate="label,comment" type="text" sortOrder="35" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Product Stock Status Selector</label>
+					<comment>Please enter "#html-id" or ".html-class". Default is '.stock span'</comment>
+				</field>
+				<field id="short_desc_selector" translate="label,comment" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Product Short Description Selector</label>
+					<comment>Please enter "#html-id" or ".html-class". Default is '.product.attribute.overview'</comment>
+				</field>
+				<field id="desc_selector" translate="label,comment" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Product Description Selector</label>
+					<comment>Please enter "#html-id" or ".html-class". Default is '#description'</comment>
+				</field>
+				<field id="more_info_selector" translate="label,comment" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Product More Information Selector</label>
+					<comment>Please enter "#html-id" or ".html-class". Default is '#additional'</comment>
+				</field>
+				<field id="actions_selector" translate="label,comment" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Add to cart Wrapper Selector</label>
+					<comment>Please enter "#html-id" or ".html-class". Default is '.box-tocart .actions'</comment>
+					<depends>
+						<field id="*/other_settings/qty_inc_pos">1</field>
+					</depends>
+				</field>
+				<field id="qty_wrap_selector" translate="label,comment" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Qty Wrapper Selector</label>
+					<comment>Please enter "#html-id" or ".html-class". Default is '.field.qty'</comment>
+					<depends>
+						<field id="*/other_settings/qty_inc_pos">2</field>
+					</depends>
+				</field>
+			</group>
+			<group id="other_settings" translate="label" type="text" sortOrder="25" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Other Settings</label>
+				<field id="qty_inc_pos" translate="label,comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Qty Increments message position</label>
+					<source_model>Lightweight\CpsdRefactored\Model\Config\Source\QtyIncPos</source_model>
+					<comment>Where do you want to show the qty increments message?</comment>
+				</field>
+				<field id="preselect_type" translate="label,comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Type of Preselection</label>
+					<source_model>Lightweight\CpsdRefactored\Model\Config\Source\PreselectType</source_model>
+					<comment>This will auto select options on product details page. Lowest price option will consider price of associated products. Specific value option will need to be set at configurable products settings.</comment>
+				</field>
+			</group>
+			<group id="tp_settings" translate="label" type="text" sortOrder="30" showInDefault="1" showInStore="1" showInWebsite="1">
+				<label>Tier Price Settings</label>
+				<field id="enable_cpsd_tp" translate="label,comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Enable Configurable Product Tier Pricing</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				<field id="use_for_all" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Use specific tier price for all</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+					<comment>Enable this option if you want to use one simple product's tier price for all other simple products. Important! Don't forget to select the simple product from configurable product's CPSD settings tab.</comment>
+				</field>
+				<field id="price_type" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Which tier price should be used?</label>
+					<source_model>Lightweight\CpsdRefactored\Model\Config\Source\Priceoptions</source_model>
+					<depends>
+						<field id="*/*/use_for_all">0</field>
+					</depends>
+				</field>
+				<field id="enable_grid_look" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Enable Grid Look</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+					<comment>Do you want to show your tier prices in grid format?</comment>
+				</field>
+				<field id="enable_qty_autofill" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Enable Qty Autofill</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+					<depends>
+						<field id="*/*/enable_grid_look">1</field>
+					</depends>
+					<comment>Set yes to enable autofill functionality of the qty box with Tier Price threshold.</comment>
+				</field>
+				<field id="grid_title" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Title for Tier Price Grid</label>
+					<depends>
+						<field id="*/*/enable_grid_look">1</field>
+					</depends>
+					<comment>Any text for grid title e.g., Shop More Save More!</comment>
+				</field>
+			</group>
+			<group id="category_settings" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Category Settings</label>
+				<field id="enable_cat" translate="label,comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Enable Category Settings</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+					<comment>Use this option to enable it for all categories.</comment>
+				</field>
+				<field id="use_cat_level" translate="label,comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Use Category Level Settings</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+					<comment><![CDATA[Use this option to enable it only for specific category. Note : You will need to enable it in category settings.]]></comment>
+					<depends>
+						<field id="*/*/enable_cat">1</field>
+					</depends>
+				</field>
+				<field id="show_price_range" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Show Price Range</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+					<depends>
+						<field id="*/*/enable_cat">1</field>
+					</depends>
+				</field>
+				<field id="range_label" translate="label" type="select" sortOrder="35" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Choose Price Range Label</label>
+					<source_model>Lightweight\CpsdRefactored\Model\Config\Source\RangeLabels</source_model>
+					<depends>
+						<field id="*/*/enable_cat">1</field>
+					</depends>
+				</field>
+				<field id="is_use_tier_min" translate="label,comment" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Use Tier Price to Show Lowest Price</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+					<comment>This option will allow to consider tier price for lowest amount in the default price display or in price range display.</comment>
+					<depends>
+						<field id="*/*/enable_cat">1</field>
+					</depends>
+				</field>
+				<field id="switch_price" translate="label,comment" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Show Price for Selected Options</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+					<comment><![CDATA[<strong>Note:</strong> This option will only work if you have swatches visible on category pages.]]></comment>
+					<depends>
+						<field id="*/*/enable_cat">1</field>
+					</depends>
+				</field>
+				<field id="show_tier_price" translate="label,comment" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Show Tier Price for Selected Options</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+					<comment><![CDATA[<strong>Note:</strong> This option will only work if you have swatches visible on category pages.<br/>This option will allow you to show tier prices as a tooltip on category page.]]></comment>
+					<depends>
+						<field id="*/*/enable_cat">1</field>
+					</depends>
+				</field>
+				<field id="tier_label" translate="label,comment" type="text" sortOrder="65" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Tier Price Tooltip Label</label>
+					<comment>Default label is 'Offers'.</comment>
+					<depends>
+						<field id="*/*/enable_cat">1</field>
+					</depends>
+				</field>
+				<field id="switch_name" translate="label,comment" type="select" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Switch Product Name</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+					<comment><![CDATA[<strong>Note:</strong> This option will only work if you have swatches visible on category pages.<br/>This option will allow to switch Product name on swatch selection.]]></comment>
+					<depends>
+						<field id="*/*/enable_cat">1</field>
+					</depends>
+				</field>
+				<field id="list_name_selector" translate="label,comment" type="text" sortOrder="75" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Product Name Selector</label>
+					<comment>Please enter "#html-id" or ".html-class". Default is '.product-item-name > a'.</comment>
+					<depends>
+						<field id="*/*/enable_cat">1</field>
+					</depends>
+				</field>
+				<field id="switch_url" translate="label,comment" type="select" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Switch Product Url</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+					<comment><![CDATA[<strong>Note:</strong> This option will only work if you have swatches visible on category pages.<br/>This option will allow to switch Product url on swatch selection.]]></comment>
+					<depends>
+						<field id="*/*/enable_cat">1</field>
+					</depends>
+				</field>
+				<field id="list_url_selector" translate="label,comment" type="textarea" sortOrder="85" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Product Url Selector(s)</label>
+					<comment>Please enter "#html-id" or ".html-class". Add multiple selectors separated by a comma. Default is '.product-item-link,.product-item-photo,.product-item-description > a'.</comment>
+					<depends>
+						<field id="*/*/enable_cat">1</field>
+					</depends>
+				</field>
+			</group>
+			<group id="support_info" translate="label" type="text" sortOrder="50" showInDefault="1" showInStore="1" showInWebsite="1">
+				<label>Support Info</label>
+				<field id="version" translate="label" type="label" sortOrder="10" showInDefault="1" showInStore="1" showInWebsite="1">
+					<label>Version</label>
+				</field>
+				<field id="portal_link" translate="label" type="label" sortOrder="20" showInDefault="1" showInStore="1" showInWebsite="1">
+					<label>For support visit</label>
+					<frontend_model>Lightweight\CpsdRefactored\Block\Config\Support</frontend_model>
+				</field>
+			</group>
+		</section>
+	</system>
+</config>

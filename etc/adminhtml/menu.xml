@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Backend/etc/menu.xsd">
+    <menu>
+        <update id="Best4Mage_All::main_menu" title="Best4Mage Extensions" translate="title" module="Lightweight_CpsdRefactored" sortOrder="20" resource="Best4Mage_All::main_menu"/>
+        <add id="Lightweight_CpsdRefactored::main_menu" title="Configurable Products Simple Details" translate="title" module="Lightweight_CpsdRefactored" sortOrder="10" parent="Best4Mage_All::main_menu" resource="Lightweight_CpsdRefactored::main_menu"/>
+        <add id="Lightweight_CpsdRefactored::configuration" title="Store Configuration" module="Lightweight_CpsdRefactored" sortOrder="3" parent="Lightweight_CpsdRefactored::main_menu" action="adminhtml/system_config/edit/section/cpsd" resource="Lightweight_CpsdRefactored::configuration" />
+    </menu>
+</config>

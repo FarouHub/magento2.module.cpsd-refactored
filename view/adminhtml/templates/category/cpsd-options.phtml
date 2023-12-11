@@ -1,0 +1,10 @@
+<?php
+$cpsdHelper = $this->helper('Lightweight\CpsdRefactored\Helper\Data');
+$isEnableCat = $cpsdHelper->isEnableCat();
+$isEnableCategoryLevel = $cpsdHelper->isCategoryLevel();
+?>
+
+<script type="text/javascript">
+    var isEnableCat = <?php echo $isEnableCat; ?>;
+    var isEnableCategoryLevel = <?php echo $isEnableCategoryLevel; ?>;
+</script>

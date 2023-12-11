@@ -1,0 +1,15 @@
+/**
+ * Best4Mage - Configurable Product Tier Pricing
+ * @author Best4Mage
+ */
+
+div[data-index="best4mage-cpsd-settings"] .admin__field-label.cpsd-highlight::before {
+  content: '*';
+  display: inline-block;
+  visibility: visible;
+  opacity: 1;
+  overflow: unset;
+  color: #eb5202;
+  font-size: 26px;
+  vertical-align: middle;
+}

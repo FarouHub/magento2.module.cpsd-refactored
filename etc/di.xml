@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Magento\Swatches\Block\Product\Renderer\Configurable" type="Lightweight\CpsdRefactored\Block\Rewrite\Product\Configurable"/>
+    <preference for="Magento\Swatches\Block\Product\Renderer\Listing\Configurable" type="Lightweight\CpsdRefactored\Block\Rewrite\Product\Listing\Configurable"/>
+    <preference for="Magento\ConfigurableProduct\Model\Product\Type\Configurable\Price" type="Lightweight\CpsdRefactored\Model\Rewrite\Product\Type\Configurable\Price" />
+    <preference for="Magento\Catalog\Block\Product\View\Attributes" type="Lightweight\CpsdRefactored\Block\Rewrite\Product\View\Attributes" />
+    <type name="Magento\Swatches\Block\Product\Renderer\Configurable">
+        <plugin name="cpsdAfterGetJsonConfig" type="Lightweight\CpsdRefactored\Plugin\Product\Type\Configurable" />
+    </type>
+    <type name="Magento\ConfigurableProduct\Pricing\Render\TierPriceBox">
+        <plugin name="cpsdBeforeSetTemplateM22x" type="Lightweight\CpsdRefactored\Plugin\Pricing\Render\TierPriceBox" />
+    </type>
+    <type name="Magento\Catalog\Pricing\Render\PriceBox">
+        <plugin name="cpsdBeforeSetTemplateM21x" type="Lightweight\CpsdRefactored\Plugin\Pricing\Render\TierPriceBox" />
+    </type>
+    <type name="Magento\CatalogUrlRewrite\Observer\ProductProcessUrlRewriteRemovingObserver">
+        <plugin name="cpsdBeforeDeleteUrlRewrite" type="Lightweight\CpsdRefactored\Plugin\Observer\BeforeDeleteUrlRewrite" sortOrder="1"/>
+    </type>
+    <type name="Magento\Catalog\Block\Product\ListProduct">
+        <plugin name="cpsdAroundGetProductPrice" type="Lightweight\CpsdRefactored\Plugin\Product\ListProduct" sortOrder="1"/>
+    </type>
+</config>

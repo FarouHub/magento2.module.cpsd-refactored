@@ -1,0 +1,16 @@
+<?php
+$cpsdHelper = $this->helper('Lightweight\CpsdRefactored\Helper\Data');
+$isEnabled = $cpsdHelper->isEnabled();
+$isEnableProductLevel = $cpsdHelper->isProductLevel();
+$preselectType = $cpsdHelper->getPreselectType();
+$isCptpEnable = $cpsdHelper->isCptpEnable();
+$isUseForAll = $cpsdHelper->isUseForAll();
+?>
+
+<script type="text/javascript">
+    var isEnabled = <?php echo $isEnabled; ?>;
+    var isEnableProductLevel = <?php echo $isEnableProductLevel; ?>;
+    var preselectType = <?php echo $preselectType; ?>;
+    var isCptpEnable = <?php echo $isCptpEnable; ?>;
+    var isUseForAll = <?php echo $isUseForAll; ?>;
+</script>
