@@ -104,8 +104,8 @@ class SimpleProductUrlRewrites implements IndexerActionInterface, MviewActionInt
         $this->_resource = $resource;
         $this->_connection = $resource->getConnection();
 
-        $this->_writer = new \Zend\Log\Writer\Stream(BP . '/var/log/cpsd.log');
-        $this->_logger = new \Zend\Log\Logger();
+        $this->_writer = new \Zend_Log_Writer_Stream(BP . '/var/log/cpsd.log');
+        $this->_logger = new \Zend_Log();
         $this->_logger->addWriter($this->_writer);
     }
 
